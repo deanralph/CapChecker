@@ -1,0 +1,27 @@
+{{ Extends 'layout.html' }}
+
+{{ block title}}
+Add a new Battery
+{{ endblock }}
+
+{{ body block}}
+<div class="jumbotron" style="padding-top: 25px;">
+    <h3>Add A New Battery</h3>
+    <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Manufaturer</label>
+            <input type="input" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter Database Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Model (If Known)</label>
+            <input type="input" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="Enter Database Username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Advertised Capacity (If Known)</label>
+            <input type="input" class="form-control" id="exampleInputPassword1" placeholder="Enter Database Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Submit & Generate barcode</button>
+    </form>
+</div>
+{{ endblock }}
