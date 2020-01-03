@@ -20,11 +20,11 @@ def index():
     return render_template("index.html")
 
 @app.route('/dbsettings')
-def index():
+def dbsettings():
     return render_template("dbsettings.html")
 
 @app.route('/batteries')
-def index():
+def batteries():
     return render_template("batteries.html")
 
 @app.route('/reports')
@@ -32,11 +32,11 @@ def reports():
     return render_template("reports.html")
 
 @app.route('/readings')
-def reports():
+def readings():
     return render_template("readings.html")
 
 @app.route('/newBattery')
-def index():
+def newBattery():
     return render_template("newBattery.html")
 
 if __name__ == "__main__":
