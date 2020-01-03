@@ -40,4 +40,4 @@ def newBattery():
     return render_template("newBattery.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

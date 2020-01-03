@@ -1,10 +1,10 @@
-{{ Extends 'layout.html' }}
+{% Extends 'layout.html' {%
 
-{{ block title}}
+{% block title%}
 Add a new Battery
-{{ endblock }}
+{% endblock %}
 
-{{ body block}}
+{% block body %}
 <div class="jumbotron" style="padding-top: 25px;">
     <h3>Add A New Battery</h3>
     <form>
@@ -24,4 +24,4 @@ Add a new Battery
           <button type="submit" class="btn btn-primary">Submit & Generate barcode</button>
     </form>
 </div>
-{{ endblock }}
+{% endblock %}
