@@ -8,7 +8,7 @@
 # to work out the current capacity of the cell
 
 #Imoprts
-from flask import Flask, render_tempalte
+from flask import Flask, render_template
 import qrcode
 import json
 
