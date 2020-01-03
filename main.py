@@ -19,9 +19,21 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/dbsettings')
+def index():
+    return render_template("dbsettings.html")
+
+@app.route('/batteries')
+def index():
+    return render_template("batteries.html")
+
 @app.route('/reports')
 def reports():
     return render_template("reports.html")
+
+@app.route('/readings')
+def reports():
+    return render_template("readings.html")
 
 @app.route('/newBattery')
 def index():
