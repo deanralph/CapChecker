@@ -1,0 +1,5 @@
+install_requires=[
+    'flask',
+    'pymysql',
+    'qrcode[pip]'],
+}
