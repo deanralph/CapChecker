@@ -7,12 +7,26 @@
 # The app gathers and records the current use and voltage of attached batteries
 # to work out the current capacity of the cell
 
-#Imoprts
+#Imports
 from flask import Flask, render_template
 import qrcode
 import json
 
 #Main App
+
+def generateQR(qrData):
+    qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=10,
+    border=4,
+)
+    qr.add_data(qrData)
+    qr.make(fit=True)
+
+    return qr.make_image(fill_color="black", back_color="white")
+
+
 app = Flask(__name__)
 
 @app.route('/')

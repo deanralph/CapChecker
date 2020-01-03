@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+QR Code Generator
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron" style="padding-top: 25px;">
+    <h3>QR Code Generator</h3>
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">QR Data</label>
+          <input type="input" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter qrData">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+{% endblock %}
