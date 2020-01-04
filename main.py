@@ -8,11 +8,15 @@
 # to work out the current capacity of the cell
 
 #Imports
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import qrcode
 import json
 
 #Main App
+
+def loadConfig(fileName):
+   with open(fileName) as json_file:
+    return json.load(json_file)
 
 def generateQR(qrData):
     qr = qrcode.QRCode(
@@ -33,9 +37,17 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/settings')
+@app.route('/settings', methods = ['POST', 'GET'])
 def dbsettings():
-    return render_template("settings.html")
+    if request.method == 'POST':
+        dbresult = request.form
+        with open('config\dbconfig.json', 'w') as outfile:
+            json.dump(dbresult, outfile, indent=2)
+        return "Settings Saved"
+    if request.method == 'GET':
+        sqlConf = loadConfig('config\dbconfig.json')
+        return render_template('settings.html', servervalue=sqlConf["server"], dbvalue=sqlConf["database"], uservalue=sqlConf["username"])
+
 
 @app.route('/batteries')
 def batteries():
@@ -52,6 +64,10 @@ def readings():
 @app.route('/newBattery')
 def newBattery():
     return render_template("newBattery.html")
+
+@app.route('/qrcode')
+def qrcode():#
+    return render_template("qrcode.html")
 
 if __name__ == "__main__":
     app.run()

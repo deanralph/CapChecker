@@ -24,7 +24,7 @@ Database Settings
     <br>
     <h2>Database Settings</h2>
     <br>
-    <form action = "dbresult" method = "POST">
+    <form action = "settings" method = "POST">
         <div class="form-group">
             <label for="dbSName">Database Server Name:</label>
             <input name="server" class="form-control" id="dbSName" aria-describedby="dbsHelp" placeholder={{ servervalue }}>
@@ -44,10 +44,6 @@ Database Settings
             <label for="bdPassword">Database Password</label>
             <input name="password" type="password" class="form-control" id="dbPassword" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-    </form>
-    <br>
-    <form action="index.html" method="get" target="_blank"></form>
-        <button type="submit" value = "submit"  class="btn btn-secondary btn-lg btn-block">Return</button>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
     </form>
 {% endblock %}
