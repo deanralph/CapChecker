@@ -33,9 +33,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/dbsettings')
+@app.route('/settings')
 def dbsettings():
-    return render_template("dbsettings.html")
+    return render_template("settings.html")
 
 @app.route('/batteries')
 def batteries():
@@ -54,4 +54,4 @@ def newBattery():
     return render_template("newBattery.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

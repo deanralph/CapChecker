@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+Database Settings
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron" style="padding-top: 25px;">
+    <h2>Checker Config</h2>
+    <br>
+    <form action = "batresult" method = "POST"> 
+        <div class="form-group">
+            <label for="refVoltage">Reference Voltage</label>
+            <input name="refVoltage" class="form-control" id="refVoltage" aria-describedby="refVoltageHelp" placeholder="Enter Ref. voltage">
+            <small id="refVoltageHelp" class="form-text text-muted">Please enter an accurate input voltage</small>
+        </div>
+        <div class="form-group">
+            <label name="activeBays" for="activeBays">Number of Active Bays</label>
+            <input class="form-control" id="activeBays" placeholder="No. Of Active Bays">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    <br>
+    <h2>Database Settings</h2>
+    <br>
+    <form action = "dbresult" method = "POST">
+        <div class="form-group">
+            <label for="dbSName">Database Server Name:</label>
+            <input name="server" class="form-control" id="dbSName" aria-describedby="dbsHelp" placeholder={{ servervalue }}>
+            <small id="dbsHelp" class="form-text text-muted">Please enter the database server name</small>
+        </div>
+        <div class="form-group">
+            <label for="dbName">Database Name:</label>
+            <input name="database" class="form-control" id="dbName" aria-describedby="dbHelp" placeholder={{ dbvalue }}>
+            <small id="dbHelp" class="form-text text-muted">Please enter the database name</small>
+        </div>
+        <div class="form-group">
+                <label for="dbUName">Database User Name:</label>
+                <input name="username" class="form-control" id="dbUName" aria-describedby="dbUHelp" placeholder={{ uservalue }}>
+                <small id="dbUHelp" class="form-text text-muted">Please enter the database username name</small>
+            </div>
+        <div class="form-group">
+            <label for="bdPassword">Database Password</label>
+            <input name="password" type="password" class="form-control" id="dbPassword" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </form>
+    <br>
+    <form action="index.html" method="get" target="_blank"></form>
+        <button type="submit" value = "submit"  class="btn btn-secondary btn-lg btn-block">Return</button>
+    </form>
+{% endblock %}
