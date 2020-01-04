@@ -66,7 +66,7 @@ def newBattery():
     return render_template("newBattery.html")
 
 @app.route('/qrcode')
-def qrcode():#
+def qrcodepage():
     return render_template("qrcode.html")
 
 if __name__ == "__main__":
