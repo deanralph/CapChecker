@@ -15,8 +15,9 @@ import json
 #Main App
 
 def loadConfig(fileName):
-   with open(fileName) as json_file:
-    return json.load(json_file)
+    with open(fileName) as json_file:
+        return json.load(json_file)
+
 
 def generateQR(qrData):
     qr = qrcode.QRCode(
@@ -41,11 +42,11 @@ def index():
 def dbsettings():
     if request.method == 'POST':
         dbresult = request.form
-        with open('config\dbconfig.json', 'w') as outfile:
+        with open('dbconfig.json', 'w') as outfile:
             json.dump(dbresult, outfile, indent=2)
         return "Settings Saved"
     if request.method == 'GET':
-        sqlConf = loadConfig('config\dbconfig.json')
+        sqlConf = loadConfig('dbconfig.json')
         return render_template('settings.html', servervalue=sqlConf["server"], dbvalue=sqlConf["database"], uservalue=sqlConf["username"])
 
 
