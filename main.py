@@ -11,9 +11,9 @@
 from flask import Flask, render_template, request
 import qrcode
 import json
+import sqlHandle
 
 #Main App
-
 def loadConfig(fileName):
     with open(fileName) as json_file:
         return json.load(json_file)
