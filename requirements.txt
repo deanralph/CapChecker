@@ -1,5 +1,2 @@
-install_requires=[
-    'flask',
-    'pymysql',
-    'qrcode[pip]'],
-}
+Flask==1.1.1
+PyMySQL == 0.9.3
